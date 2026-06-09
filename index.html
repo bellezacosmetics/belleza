@@ -3,74 +3,213 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Belleza — Radiance Tinted SPF 50</title>
-  <meta name="description" content="Professional-quality cosmetics that feel natural and apply effortlessly. Luxury results in 5 minutes or less." />
+  <title>Belleza — Heal. Elevate. Simplify.</title>
+  <meta name="description" content="Skincare that heals and elevates. Not another product to hide behind — one that works with your skin so you need less of everything else." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background: #F9F5F0; font-family: 'Jost', sans-serif; color: #2C2118; }
 
-    .bz-nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; border-bottom: 0.5px solid #D9C9B8; }
-    .bz-logo { font-weight: 300; font-size: 18px; letter-spacing: 0.25em; color: #2C2118; }
-    .bz-nav-tag { font-size: 11px; letter-spacing: 0.15em; color: #8C7B6B; text-transform: uppercase; }
+    :root {
+      --ivory:     #F5F2EC;
+      --ivory-mid: #EDEAE2;
+      --sage-lt:   #D4DDD0;
+      --sage:      #8A9E85;
+      --sage-dk:   #6B8566;
+      --ink:       #2A2A2A;
+      --ink-soft:  #5A5A54;
+      --ink-muted: #8A8A82;
+      --border:    #D8D8D0;
+    }
 
-    .bz-hero { display: grid; grid-template-columns: 1fr 1fr; min-height: 480px; }
-    .bz-hero-left { padding: 56px 48px; display: flex; flex-direction: column; justify-content: center; gap: 22px; }
-    .bz-eyebrow { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #A0845C; }
-    .bz-headline { font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 300; line-height: 1.12; color: #2C2118; }
-    .bz-headline em { font-style: italic; }
-    .bz-subhead { font-size: 14px; line-height: 1.75; color: #5C4D3E; max-width: 360px; }
-    .bz-price-row { display: flex; align-items: baseline; gap: 12px; }
-    .bz-price { font-family: 'Cormorant Garamond', serif; font-size: 38px; font-weight: 400; color: #2C2118; }
-    .bz-price-note { font-size: 12px; color: #8C7B6B; }
+    body { background: var(--ivory); font-family: 'Jost', sans-serif; color: var(--ink); }
 
-    .bz-btn { display: inline-block; background: #8C6A45; color: #F9F5F0; font-family: 'Jost', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; padding: 16px 36px; border: none; cursor: pointer; width: fit-content; transition: background 0.2s; }
-    .bz-btn:hover { background: #7A5B38; }
+    /* NAV */
+    .bz-nav {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 22px 48px; border-bottom: 0.5px solid var(--border);
+      background: var(--ivory);
+    }
+    .bz-logo { font-weight: 300; font-size: 17px; letter-spacing: 0.3em; color: var(--ink); }
+    .bz-nav-tag { font-size: 10px; letter-spacing: 0.18em; color: var(--ink-muted); text-transform: uppercase; }
 
-    .bz-hero-right { background: #F0E8DC; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
-    .bz-hero-right img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; position: absolute; top: 0; left: 0; }
-    .bz-badge { position: absolute; top: 24px; right: 24px; background: #2C2118; color: #F9F5F0; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; padding: 8px 14px; }
+    /* HERO */
+    .bz-hero { display: grid; grid-template-columns: 1fr 1fr; min-height: 520px; }
 
-    .bz-features { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 0.5px solid #D9C9B8; }
-    .bz-feature { padding: 32px 28px; border-right: 0.5px solid #D9C9B8; display: flex; flex-direction: column; gap: 10px; }
+    .bz-hero-left {
+      padding: 64px 56px; display: flex; flex-direction: column;
+      justify-content: center; gap: 24px;
+    }
+    .bz-eyebrow {
+      font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--sage); font-weight: 400;
+    }
+    .bz-headline {
+      font-family: 'Cormorant Garamond', serif; font-size: 54px;
+      font-weight: 300; line-height: 1.1; color: var(--ink);
+    }
+    .bz-headline em { font-style: italic; color: var(--sage-dk); }
+    .bz-subhead {
+      font-size: 14px; line-height: 1.8; color: var(--ink-soft);
+      max-width: 380px; font-weight: 300;
+    }
+    .bz-divider {
+      width: 32px; height: 0.5px; background: var(--sage);
+    }
+    .bz-price-row { display: flex; align-items: baseline; gap: 14px; }
+    .bz-price {
+      font-family: 'Cormorant Garamond', serif; font-size: 40px;
+      font-weight: 400; color: var(--ink);
+    }
+    .bz-price-note { font-size: 12px; color: var(--ink-muted); letter-spacing: 0.04em; }
+
+    .bz-btn {
+      display: inline-block; background: var(--sage); color: var(--ivory);
+      font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 500;
+      letter-spacing: 0.22em; text-transform: uppercase; padding: 16px 40px;
+      border: none; cursor: pointer; width: fit-content; transition: background 0.25s;
+    }
+    .bz-btn:hover { background: var(--sage-dk); }
+
+    .bz-hero-right {
+      background: var(--sage-lt); display: flex; align-items: center;
+      justify-content: center; position: relative; overflow: hidden;
+    }
+    .bz-hero-right img {
+      width: 100%; height: 100%; object-fit: cover;
+      object-position: center; display: block; position: absolute; top: 0; left: 0;
+    }
+    .bz-badge {
+      position: absolute; top: 24px; right: 24px;
+      background: var(--ivory); color: var(--ink); font-size: 9px;
+      letter-spacing: 0.18em; text-transform: uppercase; padding: 8px 14px;
+      border: 0.5px solid var(--border);
+    }
+
+    /* MANIFESTO STRIP */
+    .bz-manifesto {
+      padding: 48px 56px; background: var(--ivory-mid);
+      border-top: 0.5px solid var(--border); border-bottom: 0.5px solid var(--border);
+      display: flex; align-items: center; gap: 48px;
+    }
+    .bz-manifesto-text {
+      font-family: 'Cormorant Garamond', serif; font-size: 22px;
+      font-weight: 300; font-style: italic; color: var(--ink);
+      line-height: 1.5; max-width: 640px;
+    }
+    .bz-manifesto-rule {
+      flex: 1; height: 0.5px; background: var(--border); min-width: 40px;
+    }
+
+    /* FEATURES */
+    .bz-features { display: grid; grid-template-columns: repeat(3, 1fr); }
+    .bz-feature {
+      padding: 40px 32px; border-right: 0.5px solid var(--border);
+      display: flex; flex-direction: column; gap: 12px;
+      background: var(--ivory);
+    }
     .bz-feature:last-child { border-right: none; }
-    .bz-feature-title { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: #A0845C; }
-    .bz-feature-text { font-size: 13px; line-height: 1.65; color: #5C4D3E; }
+    .bz-feature-num {
+      font-family: 'Cormorant Garamond', serif; font-size: 32px;
+      font-weight: 300; color: var(--sage-lt); line-height: 1;
+    }
+    .bz-feature-title {
+      font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--sage-dk); margin-top: 4px;
+    }
+    .bz-feature-text { font-size: 13px; line-height: 1.7; color: var(--ink-soft); font-weight: 300; }
 
-    .bz-cta-strip { background: #2C2118; padding: 52px 40px; display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center; }
-    .bz-cta-headline { font-family: 'Cormorant Garamond', serif; font-size: 34px; font-weight: 300; color: #F9F5F0; font-style: italic; }
-    .bz-cta-sub { font-size: 13px; color: #C8B89A; max-width: 400px; line-height: 1.65; }
-    .bz-btn-cta { background: #F9F5F0; color: #2C2118; font-family: 'Jost', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; padding: 16px 40px; border: none; cursor: pointer; margin-top: 4px; transition: background 0.2s; }
-    .bz-btn-cta:hover { background: #EDE5D8; }
+    /* CTA STRIP */
+    .bz-cta-strip {
+      background: var(--ink); padding: 64px 48px;
+      display: flex; flex-direction: column; align-items: center;
+      gap: 20px; text-align: center;
+    }
+    .bz-cta-eyebrow {
+      font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--sage);
+    }
+    .bz-cta-headline {
+      font-family: 'Cormorant Garamond', serif; font-size: 38px;
+      font-weight: 300; color: var(--ivory); font-style: italic; line-height: 1.2;
+    }
+    .bz-cta-sub {
+      font-size: 13px; color: var(--ink-muted); max-width: 420px;
+      line-height: 1.7; font-weight: 300;
+    }
+    .bz-btn-cta {
+      background: var(--ivory); color: var(--ink); font-family: 'Jost', sans-serif;
+      font-size: 11px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase;
+      padding: 16px 44px; border: none; cursor: pointer; margin-top: 8px;
+      transition: background 0.25s;
+    }
+    .bz-btn-cta:hover { background: var(--sage-lt); }
 
-    .bz-footer { padding: 22px 40px; display: flex; justify-content: space-between; align-items: center; border-top: 0.5px solid #D9C9B8; }
-    .bz-footer-text { font-size: 11px; color: #8C7B6B; }
+    /* FOOTER */
+    .bz-footer {
+      padding: 24px 48px; display: flex; justify-content: space-between;
+      align-items: center; border-top: 0.5px solid var(--border);
+      background: var(--ivory);
+    }
+    .bz-footer-text { font-size: 10px; color: var(--ink-muted); letter-spacing: 0.06em; }
 
-    /* Overlay / demand test modal */
-    .bz-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(44,33,24,0.65); z-index: 100; align-items: center; justify-content: center; }
+    /* OVERLAY */
+    .bz-overlay {
+      display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(42,42,42,0.6); z-index: 100;
+      align-items: center; justify-content: center;
+    }
     .bz-overlay.active { display: flex; }
-    .bz-error-card { background: #F9F5F0; padding: 48px 40px; max-width: 400px; width: 90%; display: flex; flex-direction: column; gap: 16px; align-items: center; text-align: center; }
-    .bz-error-icon { width: 48px; height: 48px; border-radius: 50%; border: 1px solid #D9C9B8; display: flex; align-items: center; justify-content: center; color: #A0845C; font-size: 22px; }
-    .bz-error-title { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 400; color: #2C2118; }
-    .bz-error-text { font-size: 13px; line-height: 1.7; color: #5C4D3E; }
-    .bz-error-email { width: 100%; padding: 12px 16px; border: 0.5px solid #D9C9B8; background: #F9F5F0; font-family: 'Jost', sans-serif; font-size: 13px; color: #2C2118; outline: none; }
-    .bz-error-email:focus { border-color: #A0845C; }
-    .bz-error-btn { width: 100%; background: #8C6A45; color: #F9F5F0; font-family: 'Jost', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; padding: 16px; border: none; cursor: pointer; }
-    .bz-error-close { font-size: 11px; color: #8C7B6B; cursor: pointer; text-decoration: underline; background: none; border: none; font-family: 'Jost', sans-serif; margin-top: 4px; }
+    .bz-error-card {
+      background: var(--ivory); padding: 52px 44px; max-width: 420px; width: 90%;
+      display: flex; flex-direction: column; gap: 16px;
+      align-items: center; text-align: center;
+    }
+    .bz-error-mark {
+      width: 40px; height: 0.5px; background: var(--sage); margin-bottom: 8px;
+    }
+    .bz-error-title {
+      font-family: 'Cormorant Garamond', serif; font-size: 30px;
+      font-weight: 300; color: var(--ink); font-style: italic;
+    }
+    .bz-error-text {
+      font-size: 13px; line-height: 1.75; color: var(--ink-soft);
+      font-weight: 300; max-width: 320px;
+    }
+    .bz-error-email {
+      width: 100%; padding: 13px 16px; border: 0.5px solid var(--border);
+      background: var(--ivory); font-family: 'Jost', sans-serif;
+      font-size: 13px; color: var(--ink); outline: none;
+    }
+    .bz-error-email:focus { border-color: var(--sage); }
+    .bz-error-btn {
+      width: 100%; background: var(--sage); color: var(--ivory);
+      font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 500;
+      letter-spacing: 0.2em; text-transform: uppercase; padding: 16px;
+      border: none; cursor: pointer; transition: background 0.25s;
+    }
+    .bz-error-btn:hover { background: var(--sage-dk); }
+    .bz-error-close {
+      font-size: 11px; color: var(--ink-muted); cursor: pointer;
+      text-decoration: underline; background: none; border: none;
+      font-family: 'Jost', sans-serif; margin-top: 4px; letter-spacing: 0.04em;
+    }
 
+    /* MOBILE */
     @media (max-width: 768px) {
-      .bz-nav { padding: 16px 20px; }
+      .bz-nav { padding: 18px 24px; }
       .bz-nav-tag { display: none; }
       .bz-hero { grid-template-columns: 1fr; }
-      .bz-hero-left { padding: 40px 24px; }
-      .bz-headline { font-size: 38px; }
-      .bz-hero-right { min-height: 320px; }
+      .bz-hero-left { padding: 44px 24px; }
+      .bz-headline { font-size: 40px; }
+      .bz-hero-right { min-height: 340px; }
+      .bz-manifesto { padding: 36px 24px; flex-direction: column; gap: 20px; }
+      .bz-manifesto-rule { display: none; }
       .bz-features { grid-template-columns: 1fr; }
-      .bz-feature { border-right: none; border-bottom: 0.5px solid #D9C9B8; }
+      .bz-feature { border-right: none; border-bottom: 0.5px solid var(--border); }
       .bz-feature:last-child { border-bottom: none; }
-      .bz-cta-strip { padding: 40px 24px; }
+      .bz-cta-strip { padding: 48px 24px; }
       .bz-footer { flex-direction: column; gap: 8px; padding: 20px 24px; text-align: center; }
     }
   </style>
@@ -79,14 +218,15 @@
 
   <nav class="bz-nav">
     <span class="bz-logo">BELLEZA</span>
-    <span class="bz-nav-tag">Professional Beauty · Natural Results</span>
+    <span class="bz-nav-tag">Heal · Elevate · Simplify</span>
   </nav>
 
   <section class="bz-hero">
     <div class="bz-hero-left">
-      <span class="bz-eyebrow">New · Radiance Collection</span>
-      <h1 class="bz-headline">Your skin,<br><em>but better.</em><br>In 5 minutes.</h1>
-      <p class="bz-subhead">Most beauty brands want you to buy more. We want you to need less. Radiance Tinted SPF 50 — skincare and makeup in one, for women who don't have time for a routine.</p>
+      <span class="bz-eyebrow">Radiance Collection — SPF 50</span>
+      <h1 class="bz-headline">Not a mask.<br><em>A ritual.</em><br>5 minutes.</h1>
+      <div class="bz-divider"></div>
+      <p class="bz-subhead">Most brands want you to cover your skin. Belleza was built to heal it. Radiance Tinted SPF 50 — skincare that protects, hydrates, and enhances without adding a single extra step to your morning.</p>
       <div class="bz-price-row">
         <span class="bz-price">$48</span>
         <span class="bz-price-note">Free shipping · 30-day returns</span>
@@ -95,42 +235,50 @@
     </div>
 
     <div class="bz-hero-right">
-      <div class="bz-badge">SPF 50 · Tinted</div>
-      <!-- Replace spf50.png with your actual image filename -->
+      <div class="bz-badge">SPF 50 · Tinted · Clean</div>
       <img src="spf50.png" alt="Belleza Radiance Tinted SPF 50" />
     </div>
   </section>
 
+  <div class="bz-manifesto">
+    <div class="bz-manifesto-rule"></div>
+    <p class="bz-manifesto-text">"She is everyone and everything at once — and she still deserves 5 minutes to heal her skin and feel her best."</p>
+    <div class="bz-manifesto-rule"></div>
+  </div>
+
   <section class="bz-features">
     <div class="bz-feature">
-      <span class="bz-feature-title">Clean formula</span>
-      <p class="bz-feature-text">No parabens, sulfates, or synthetic fragrances. Dermatologist-tested, safe for sensitive skin.</p>
+      <span class="bz-feature-num">01</span>
+      <span class="bz-feature-title">Heal first</span>
+      <p class="bz-feature-text">No harsh ingredients. No plastics or acrylics. Clean formulation that works with your skin — not against it. Safe for acne-prone and combination skin.</p>
     </div>
     <div class="bz-feature">
-      <span class="bz-feature-title">Skincare meets makeup</span>
-      <p class="bz-feature-text">SPF protection, hydration, and buildable coverage in one step. Your routine, simplified.</p>
+      <span class="bz-feature-num">02</span>
+      <span class="bz-feature-title">Enhance, don't mask</span>
+      <p class="bz-feature-text">A tint that evens your skin tone without whitecast or residue. SPF protection that doesn't make you reach for concealer just to leave the house.</p>
     </div>
     <div class="bz-feature">
-      <span class="bz-feature-title">Built for real life</span>
-      <p class="bz-feature-text">Not for Instagram tutorials. For women who want to look great and get on with their day.</p>
+      <span class="bz-feature-num">03</span>
+      <span class="bz-feature-title">Built for her life</span>
+      <p class="bz-feature-text">For the woman who is up at 6am, out the door by 7, and everything in between. One pump. No routine required.</p>
     </div>
   </section>
 
   <section class="bz-cta-strip">
-    <p class="bz-cta-headline">Luxury doesn't have to take long.</p>
-    <p class="bz-cta-sub">The only product in your bag that does the work of five. SPF. Hydration. Coverage. All in one pump.</p>
+    <span class="bz-cta-eyebrow">Radiance Tinted SPF 50</span>
+    <p class="bz-cta-headline">Luxury that was always<br>meant to be yours.</p>
+    <p class="bz-cta-sub">The ingredients and results that high-end skincare has kept to itself — finally in a formula made for real life.</p>
     <button class="bz-btn-cta" onclick="document.getElementById('bz-overlay').classList.add('active')">Order Now — $48</button>
   </section>
 
   <footer class="bz-footer">
     <span class="bz-footer-text">© 2025 Belleza. All rights reserved.</span>
-    <span class="bz-footer-text">Professional beauty · Natural results</span>
+    <span class="bz-footer-text">Heal · Elevate · Simplify</span>
   </footer>
 
-  <!-- Demand test overlay — fires on Order Now click -->
   <div class="bz-overlay" id="bz-overlay">
     <div class="bz-error-card">
-      <div class="bz-error-icon">⏳</div>
+      <div class="bz-error-mark"></div>
       <h2 class="bz-error-title">Almost there.</h2>
       <p class="bz-error-text">We're finalizing our first production run and checkout isn't open yet. Leave your email and you'll be first — priority access and 10% off at launch.</p>
       <input class="bz-error-email" type="email" placeholder="Your email address" />
