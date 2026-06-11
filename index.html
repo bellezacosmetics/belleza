@@ -196,6 +196,13 @@
       font-family: 'Jost', sans-serif; margin-top: 4px; letter-spacing: 0.04em;
     }
 
+    /* SHADE NOTE */
+    .bz-shade-note {
+      font-size: 11px; color: var(--ink-muted); font-weight: 300;
+      letter-spacing: 0.03em; line-height: 1.6; max-width: 380px;
+    }
+    .bz-shade-note em { font-style: italic; color: var(--sage-dk); }
+
     /* MOBILE */
     @media (max-width: 768px) {
       .bz-nav { padding: 18px 24px; }
@@ -213,6 +220,24 @@
       .bz-footer { flex-direction: column; gap: 8px; padding: 20px 24px; text-align: center; }
     }
   </style>
+
+  <!-- Meta Pixel — Belleza Pixel 20260610 -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1511602920437025');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1511602920437025&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel -->
 </head>
 <body>
 
@@ -231,12 +256,13 @@
         <span class="bz-price">$38</span>
         <span class="bz-price-note">Free shipping · 30-day returns</span>
       </div>
-      <button class="bz-btn" onclick="document.getElementById('bz-overlay').classList.add('active')">Order Now</button>
+      <p class="bz-shade-note">Launching in <em>one sheer, flexible shade</em> designed for light-to-medium tones. Deeper shades are in development — we'd rather expand honestly than claim universal.</p>
+      <button class="bz-btn" onclick="bzOrderNow()">Order Now</button>
     </div>
 
     <div class="bz-hero-right">
       <div class="bz-badge">SPF 50 · Tinted · Clean</div>
-      <img src="spf50.png" alt="Belleza Radiance Tinted SPF 50" />
+      <img src="spf50.png" alt="Belleza Sana Tinted SPF 50" />
     </div>
   </section>
 
@@ -268,11 +294,11 @@
     <span class="bz-cta-eyebrow">Sana Tinted SPF 50</span>
     <p class="bz-cta-headline">Luxury that was always<br>meant to be yours.</p>
     <p class="bz-cta-sub">The ingredients and results that high-end skincare has kept to itself — finally in a formula made for real life.</p>
-    <button class="bz-btn-cta" onclick="document.getElementById('bz-overlay').classList.add('active')">Order Now — $38</button>
+    <button class="bz-btn-cta" onclick="bzOrderNow()">Order Now — $38</button>
   </section>
 
   <footer class="bz-footer">
-    <span class="bz-footer-text">© 2025 Belleza. All rights reserved.</span>
+    <span class="bz-footer-text">© 2026 Belleza. All rights reserved.</span>
     <span class="bz-footer-text">Heal · Elevate · Simplify</span>
   </footer>
 
@@ -280,12 +306,51 @@
     <div class="bz-error-card">
       <div class="bz-error-mark"></div>
       <h2 class="bz-error-title">Almost there.</h2>
-      <p class="bz-error-text">We're finalizing our first production run and checkout isn't open yet. Leave your email and you'll be first — priority access and 10% off at launch.</p>
-      <input class="bz-error-email" type="email" placeholder="Your email address" />
-      <button class="bz-error-btn">Notify me at launch</button>
+      <p class="bz-error-text" id="bz-modal-text">We're finalizing our first production run and checkout isn't open yet. Leave your email and you'll be first — priority access and 10% off at launch.</p>
+      <p class="bz-shade-note" style="text-align:center;">One sheer shade at launch, made for light-to-medium tones — deeper shades to follow.</p>
+      <input class="bz-error-email" type="email" id="bz-email" placeholder="Your email address" />
+      <button class="bz-error-btn" id="bz-submit" onclick="bzSubmitEmail()">Notify me at launch</button>
       <button class="bz-error-close" onclick="document.getElementById('bz-overlay').classList.remove('active')">No thanks, I'll check back later</button>
     </div>
   </div>
+
+  <script>
+    // Order Now: fire tracking + open modal
+    function bzOrderNow() {
+      if (window.fbq) fbq('track', 'InitiateCheckout');
+      document.getElementById('bz-overlay').classList.add('active');
+    }
+
+    // Email capture → Formspree (Sana Prelaunch)
+    async function bzSubmitEmail() {
+      var input = document.getElementById('bz-email');
+      var btn = document.getElementById('bz-submit');
+      var email = input.value.trim();
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        input.style.borderColor = '#b07070';
+        return;
+      }
+      btn.disabled = true;
+      btn.textContent = 'One moment…';
+      try {
+        var res = await fetch('https://formspree.io/f/xvznbaro', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({ email: email, source: 'sana-prelaunch' })
+        });
+        if (!res.ok) throw new Error('submit failed');
+        if (window.fbq) fbq('track', 'Lead');
+        document.getElementById('bz-modal-text').textContent =
+          "You're on the list. We'll email you the moment Sana is ready — with your priority access and 10% off.";
+        input.style.display = 'none';
+        btn.style.display = 'none';
+      } catch (e) {
+        btn.disabled = false;
+        btn.textContent = 'Notify me at launch';
+        input.style.borderColor = '#b07070';
+      }
+    }
+  </script>
 
 </body>
 </html>
