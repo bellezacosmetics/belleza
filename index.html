@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Belleza — Heal. Elevate. Simplify.</title>
-  <meta name="description" content="Skincare that heals and elevates. Not another product to hide behind — one that works with your skin so you need less of everything else." />
+  <meta name="description" content="Sana — a tinted mineral SPF 50 in development. One step, one honestly stated shade range, and full formula disclosure before we ever ask you to buy." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -249,10 +249,10 @@
 
   <section class="bz-hero">
     <div class="bz-hero-left">
-      <span class="bz-eyebrow">Sana — Tinted SPF 50</span>
+      <span class="bz-eyebrow">Sana — Tinted SPF 50 · In Development</span>
       <h1 class="bz-headline">Not a mask.<br><em>A ritual.</em><br>5 minutes.</h1>
       <div class="bz-divider"></div>
-      <p class="bz-subhead">Most brands want you to cover your skin. Belleza was built to heal it. Sana — heal in Spanish — is a Tinted SPF 50 that protects, hydrates, and enhances without adding a single extra step to your morning.</p>
+      <p class="bz-subhead">Most brands want you to cover your skin. We think your skin should need less — less product, less routine, less guesswork. Sana — "heal" in Spanish — is a tinted mineral SPF 50 in development: sun protection and sheer, even coverage in one morning step.</p>
       <div class="bz-price-row">
         <span class="bz-price">$38</span>
         <span class="bz-price-note">Free shipping · 30-day returns</span>
@@ -262,27 +262,27 @@
     </div>
 
     <div class="bz-hero-right">
-      <div class="bz-badge">SPF 50 · Tinted · Clean</div>
+      <div class="bz-badge">SPF 50 · Tinted · Mineral</div>
       <img src="spf50.png" alt="Belleza Sana Tinted SPF 50" />
     </div>
   </section>
 
   <div class="bz-manifesto">
     <div class="bz-manifesto-rule"></div>
-    <p class="bz-manifesto-text">"She is everyone and everything at once — and she still deserves 5 minutes to heal her skin and feel her best."</p>
+    <p class="bz-manifesto-text">"She is everyone and everything at once — and she still deserves 5 minutes to care for her skin and feel her best."</p>
     <div class="bz-manifesto-rule"></div>
   </div>
 
   <section class="bz-features">
     <div class="bz-feature">
       <span class="bz-feature-num">01</span>
-      <span class="bz-feature-title">Heal first</span>
-      <p class="bz-feature-text">No harsh ingredients. No plastics or acrylics. Clean formulation that works with your skin — not against it. Safe for acne-prone and combination skin.</p>
+      <span class="bz-feature-title">Full disclosure, first</span>
+      <p class="bz-feature-text">Our standard: a short, gentle ingredient list — and we'll publish the complete formula before we ever ask you to buy. No mystery blends, no unregulated buzzwords. You'll know exactly what's in the bottle.</p>
     </div>
     <div class="bz-feature">
       <span class="bz-feature-num">02</span>
       <span class="bz-feature-title">Enhance, don't mask</span>
-      <p class="bz-feature-text">A tint that evens your skin tone without whitecast or residue. SPF protection that doesn't make you reach for concealer just to leave the house.</p>
+      <p class="bz-feature-text">A tint designed to counter the white cast mineral filters can leave — made for light-to-medium tones, and we say so upfront. If that's not your range, we'd rather tell you now than surprise you later.</p>
     </div>
     <div class="bz-feature">
       <span class="bz-feature-num">03</span>
@@ -294,7 +294,7 @@
   <section class="bz-cta-strip">
     <span class="bz-cta-eyebrow">Sana Tinted SPF 50</span>
     <p class="bz-cta-headline">Luxury that was always<br>meant to be yours.</p>
-    <p class="bz-cta-sub">The ingredients and results that high-end skincare has kept to itself — finally in a formula made for real life.</p>
+    <p class="bz-cta-sub">One honest step, full formula disclosure, and a shade range we state out loud. In development now — join the list and you'll know everything before anyone else.</p>
     <button class="bz-btn-cta" onclick="bzOrderNow()">Order Now — $38</button>
   </section>
 
@@ -307,10 +307,10 @@
     <div class="bz-error-card">
       <div class="bz-error-mark"></div>
       <h2 class="bz-error-title">Almost there.</h2>
-      <p class="bz-error-text" id="bz-modal-text">We're finalizing our first production run and checkout isn't open yet. Leave your email and you'll be first — priority access and 10% off at launch.</p>
+      <p class="bz-error-text" id="bz-modal-text">Checkout opens with our first production run. Leave your email and we'll send you <strong>The Tinted SPF Guide</strong> — free, instantly — plus priority access and 10% off when Sana launches.</p>
       <p class="bz-shade-note" style="text-align:center;">One sheer shade at launch, made for light-to-medium tones — deeper shades to follow.</p>
       <input class="bz-error-email" type="email" id="bz-email" placeholder="Your email address" />
-      <button class="bz-error-btn" id="bz-submit" onclick="bzSubmitEmail()">Notify me at launch</button>
+      <button class="bz-error-btn" id="bz-submit" onclick="bzSubmitEmail()">Send me the guide</button>
       <button class="bz-error-close" onclick="document.getElementById('bz-overlay').classList.remove('active')">No thanks, I'll check back later</button>
     </div>
   </div>
@@ -322,7 +322,18 @@
       document.getElementById('bz-overlay').classList.add('active');
     }
 
-    // Email capture → Formspree (Sana Prelaunch)
+    // ─────────────────────────────────────────────────────────────
+    // MAILERLITE SETUP — one value to paste:
+    // 1. In MailerLite: Subscribers → Groups → create "sana-prelaunch"
+    // 2. Forms → Embedded forms → create form, attach the group
+    // 3. In the generated HTML embed code, find the <form> tag's
+    //    action attribute. It looks like:
+    //    https://assets.mailerlite.com/jsonp/XXXXXX/forms/YYYYYYYYYY/subscribe
+    // 4. Paste that full URL below, replacing the placeholder.
+    // ─────────────────────────────────────────────────────────────
+    var ML_FORM_ACTION = 'https://assets.mailerlite.com/jsonp/2486852/forms/191982925638534409/subscribe';
+
+    // Email capture → MailerLite (Sana Prelaunch)
     async function bzSubmitEmail() {
       var input = document.getElementById('bz-email');
       var btn = document.getElementById('bz-submit');
@@ -334,20 +345,23 @@
       btn.disabled = true;
       btn.textContent = 'One moment…';
       try {
-        var res = await fetch('https://formspree.io/f/xvznbaro', {
+        var fd = new FormData();
+        fd.append('fields[email]', email);
+        fd.append('ml-submit', '1');
+        fd.append('anticsrf', 'true');
+        var res = await fetch(ML_FORM_ACTION, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify({ email: email, source: 'sana-prelaunch' })
+          body: fd
         });
         if (!res.ok) throw new Error('submit failed');
         if (window.fbq) fbq('track', 'Lead');
         document.getElementById('bz-modal-text').textContent =
-          "You're on the list. We'll email you the moment Sana is ready — with your priority access and 10% off.";
+          "You're in. Check your inbox — The Tinted SPF Guide is on its way, and your priority access and 10% off are locked for launch.";
         input.style.display = 'none';
         btn.style.display = 'none';
       } catch (e) {
         btn.disabled = false;
-        btn.textContent = 'Notify me at launch';
+        btn.textContent = 'Send me the guide';
         input.style.borderColor = '#b07070';
       }
     }
